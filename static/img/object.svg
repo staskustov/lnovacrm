@@ -1,0 +1,19 @@
+<svg width="200" height="132" viewBox="0 0 200 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M64.5 1H141.75C142.302 1 142.75 1.44772 142.75 2V131H63.5V2C63.5 1.44771 63.9477 1 64.5 1Z" stroke="white" stroke-width="2"/>
+<path d="M2 38.7142H74V131H2C1.44771 131 1 130.552 1 130V39.7142C1 39.1619 1.44772 38.7142 2 38.7142Z" stroke="white" stroke-width="2"/>
+<path d="M132.25 63.8571H198C198.552 63.8571 199 64.3048 199 64.8571V130C199 130.552 198.552 131 198 131H132.25V63.8571Z" stroke="white" stroke-width="2"/>
+<line x1="75" y1="30.4285" x2="131.25" y2="30.4285" stroke="white" stroke-width="2"/>
+<line x1="88.5" y1="44.0001" x2="88.5" y2="56.5715" stroke="white" stroke-width="2"/>
+<line x1="19.75" y1="62.8571" x2="19.75" y2="75.4285" stroke="white" stroke-width="2"/>
+<line x1="44.75" y1="62.8571" x2="44.75" y2="75.4285" stroke="white" stroke-width="2"/>
+<line x1="19.75" y1="88" x2="19.75" y2="100.571" stroke="white" stroke-width="2"/>
+<line x1="44.75" y1="88" x2="44.75" y2="100.571" stroke="white" stroke-width="2"/>
+<line x1="32.25" y1="106.857" x2="32.25" y2="119.429" stroke="white" stroke-width="2"/>
+<line x1="107.25" y1="44.0001" x2="107.25" y2="56.5715" stroke="white" stroke-width="2"/>
+<line x1="88.5" y1="69.1429" x2="88.5" y2="81.7143" stroke="white" stroke-width="2"/>
+<line x1="107.25" y1="69.1429" x2="107.25" y2="81.7143" stroke="white" stroke-width="2"/>
+<rect x="82.25" y="95.2858" width="41.75" height="35.7143" stroke="white" stroke-width="2"/>
+<line x1="150" y1="93.2858" x2="181.25" y2="93.2858" stroke="white" stroke-width="2"/>
+<line x1="151" y1="106.857" x2="151" y2="125.714" stroke="white" stroke-width="2"/>
+<line x1="169.75" y1="106.857" x2="169.75" y2="125.714" stroke="white" stroke-width="2"/>
+</svg>

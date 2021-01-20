@@ -1,0 +1,601 @@
+.workspace-realty {
+    margin-left: 110px;
+    min-height: 90%;
+    display: block;
+}
+
+.objects-filter {
+    min-width: 1240px;
+    height: 300px;
+    display: block;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+}
+
+.objects-container {
+    margin-top: 30px;
+    
+}
+
+.realty-object {
+    min-width: 1300px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.realty-object:hover {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3E8CE0;
+}
+
+.object-style {
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;  
+}
+
+.object-filter-base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-width: 1240px;
+    height: 80px;
+    margin-top: 10px;
+}
+
+
+.object-filter-additional {
+    margin-top: 10px;
+    display:flex;
+    justify-content: space-between;
+    
+    
+}
+
+.object-additional-info {
+    width: 30%;
+}
+
+.object-additional-info-marketing {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.object-filter-additional-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.arrow-down {
+    margin-bottom: 10px;
+}
+.arrow-down:hover {
+    cursor: pointer;
+}
+
+.arrow-up {
+   margin-bottom: 10px; 
+}
+
+.arrow-up:hover {
+    cursor: pointer;
+}
+
+.objects-filter-type-deal {
+    float: left;
+}
+
+.object-id {
+    width: 70px;
+}
+
+.deal-type {
+    width: 30px;
+}
+
+.object-date {
+    width: 80px;
+}
+
+.object-adress {
+    width: 200px;
+}
+
+.object-param {
+    width: 120px;
+    display: block;
+}
+
+.object-price {
+    width: 140px;
+}
+
+.object-responsible-staffer {
+    width: 140px;
+}
+
+.object-marketing {
+    min-width: 60px;
+}
+
+.objects-work {
+    min-width: 100px;
+}
+
+.metro-item {
+}
+
+.metro-color {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.ring-line {
+    background-color: saddlebrown;
+}
+
+.sokolnicheskaya {
+    background-color: red;
+}
+
+.zamoskvoretskaya {
+    background-color: green;
+}
+
+.arbatsko-pokrovskaya {
+    background-color: blue;
+}
+
+.filevskaya {
+    background-color: deepskyblue;
+}
+
+.kaluzhsko-rizhskaya {
+    background-color: orange;
+}
+
+.tagansko-krasnopresnenskaya {
+    background-color: purple;
+}
+
+.kalininskaya {
+    background-color: yellow;
+}
+
+.serpuhovsko-temiryazevskaya {
+    background-color: grey;
+}
+
+.lyublinskaya {
+    background-color: greenyellow;
+}
+
+.butovskaya {
+    background-color: lightblue;
+}
+
+.nekrasovskaya {
+    background-color: hotpink;
+}
+
+.mcd {
+    background-color: pink;
+}
+
+.metro-title {
+    margin-left: 10px;
+}
+
+
+
+.without-marketing {
+    background-color: #C4C4C4;    
+}
+
+
+.object-marketing-lnova {
+    background-color: #0B265B;     
+}
+
+.object-marketing-cian {
+    background-color: #00eeee;
+}
+
+.object-marketing-avito {
+    background-color: #00AAFF;
+}
+
+.object-marketing-yandex-realty {
+    background-color: #FFCC00;
+}
+
+.oms {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+
+.object-filter-form {
+    width: 100%;
+    height: 200px;
+}
+
+.object-filter-form-imput {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+    background-color: #FBFBFB;
+    margin-top: 10px;
+    height: 34px;
+    width: 120px;
+    color: #040F2D;
+    
+}
+
+.object-filter-form-imput::placeholder {
+    color: #040F2D;
+}
+
+.object-filter-form-imput:hover {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3E8CE0;
+}
+
+.object-filter-form-imput:focus {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: 1px solid #3E8CE0;
+}
+
+.object-filter-form-imput[type=text] {
+    padding-left: 10px;
+    color: #040F2D;
+}
+
+.object-filter-form-imput[type=number] {
+    padding-left: 10px;
+    color: #040F2D;
+}
+
+.object-span {
+    display: inline-block;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #040F2D;
+	padding: 0px 5px;
+	line-height: 30px;
+	
+}
+
+.object-staff-work {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.object-menu {
+    margin-right: 20px;
+}
+
+
+.number-field-price {
+    width: 150px;
+    height: 34px;
+    border-radius: 3px;
+    
+}
+
+.objectselect::-webkit-outer-spin-button,
+.objectselect::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.number-field-price::-webkit-outer-spin-button,
+.number-field-price::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.object-filter-form-imput::-webkit-outer-spin-button,
+.object-filter-form-imput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-label-text {
+    font-family: Helvetica;
+    font-style: normal;
+    font-size: 20px;
+    color: #040F2D;
+}
+
+
+.form-group {
+    margin-left: 10px;
+}
+
+.form-objectselect {
+    float: right;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.form-objectselect select {
+    display: inline-block;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    background-color: #FBFBFB;
+    text-align: center;
+    margin-left: 10px;
+    width: 224px;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.object-staff-select {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    padding-left: 10px;
+    color: #040F2D;
+	line-height: 34px;
+    text-align-last: center;
+}
+
+
+.object-staff-select:hover {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3E8CE0;
+}
+
+.object-staff-select:focus {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: 1px solid #3E8CE0;
+}
+
+.checkbox-btn {
+	display: inline-block;
+	margin: 10px 5px 0 0;
+	user-select: none;
+	position: relative;
+}
+
+.checkbox-btn input[type=checkbox] {
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+
+.checkbox-btn span {
+	display: inline-block;
+	cursor: pointer;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #040F2D;
+	padding: 0px 10px;
+	line-height: 34px;
+	border: 1px solid #C4C4C4;
+	border-radius: 4px;
+	transition: background 0.2s ease;
+}
+ 
+/* Checked */
+.checkbox-btn input[type=checkbox]:checked + span {
+	background: #3E8CE0;
+    color: white;
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3E8CE0;
+}
+ 
+.checkbox-btn input[type=checkbox]:hover + span {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3E8CE0;
+}
+/* Focus */
+.focused span {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    background-color: #FFFFFF;
+}
+ 
+/* Hover */
+.checkbox-btn:hover {
+	color: #FFFFFF;
+    
+    
+}
+ 
+.form_radio_btn {
+	display: inline-block;
+	margin-right: 10px;
+    margin-top: 10px;
+}
+
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: 1px solid #C4C4C4;
+	border-radius: 4px;
+	user-select: none;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+	background: #3E8CE0;
+    color: white;
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3E8CE0;
+}
+ 
+/* Hover */
+.form_radio_btn label:hover {
+	box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #3E8CE0;
+}
+
+.button-submit {
+    display: inline-block;
+	user-select: none;
+	position: relative;
+    width: 140px;
+    height: 40px;
+    background-color: #3E8CE0;
+    font-family: Helvetica;
+    font-size: 18px;
+    color: white;
+    border: 1px solid #3E8CE0;
+    border-radius: 4px;
+}
+
+.button-submit:hover {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.button-reset {
+    display: inline-block;
+	user-select: none;
+	position: relative;
+    width: 140px;
+    height: 40px;
+    font-family: Helvetica;
+    font-size: 18px;
+    color: #040F2D;
+    border: 1px solid #040F2D;
+    border-radius: 4px;
+	transition: background 0.2s ease;
+}
+
+.button-reset:hover {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: white;
+    background-color: #040F2D;
+    border: 1px solid #040F2D;
+}
+
+
+.object-id-search {
+    float: right;
+}
+
+.submit-reset-button {
+    display: block;
+    float: right;
+    margin-top: 10px;
+}
+
+.metrobtn {
+    display: inline-block;
+	user-select: none;
+	position: relative;
+    width: 100px;
+    height: 34px;
+    background-color: none;
+    font-family: Helvetica;
+    font-size: 18px;
+    color: #040F2D;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+    padding-bottom 4px;
+    margin-top: 10px;
+}
+
+.metrobtn:hover {
+    box-shadow: 0 10px 7px -7px rgba(0, 0, 0, 0.7), 0 1px 0px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border: 1px solid #3E8CE0;
+}
+
+.margin60 {
+    margin-top: 15px;
+}
+
+.objects-filter-type-realty {
+    margin-left: 60px;
+    margin-right: 75px;
+    float: left;
+    margin-top: 15px;
+}
+
+.before-footer {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+.object-rooms {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.object-filter-marketing {
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.form-text {
+    display: inline-block;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #040F2D;
+}
+
+.object-menu:hover {
+    cursor: pointer;
+}
+
+.marketingBlock {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+

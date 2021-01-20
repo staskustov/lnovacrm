@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/header_buttons.css">
+</head>
+<body>
+<div class="header" id="header-id">
+       <div class="h1"><p class="header-title">Главная</p></div>
+        <ul class="header-comand clearfix">
+            <li class="comand-list"><a href="#" ><img id="add" class="main-link add add-dropbtn svg" src="img/add.svg" onmouseover="this.src='img/add_hover.svg';" onclick="OpenAddModal(); AddClick()" onmouseout="this.src='img/add.svg';" alt="Добавить"></a></li>
+            <li class="comand-list"><a href="#" ><img id="visit" class="main-link visit svg" src="img/visit.svg" onmouseover="this.src='img/visit_hover.svg';" onmouseout="this.src='img/visit.svg';"  onclick="OpenVisitModal(); VisitClick()" alt="Запись на выезд"></a></li>
+            <li class="comand-list"><a href="#"><img class="main-link alert svg" src="img/alert.svg" onmouseover="this.src='img/alert_hover.svg';" onmouseout="this.src='img/alert.svg';" onclick="OpenNoticeModal()" alt="Уведомления"></a></li>
+            <li class="comand-list"><a href="calendar.html"><img class="main-link calendar svg" src="img/calendar.svg" onmouseover="this.src='img/calendar_hover.svg';" onmouseout="this.src='img/calendar.svg';" alt="Календарь"></a></li>
+            <li class="mail-link"><a href="mail.html"><img class="main-link mail svg" src="img/mail.svg" onmouseover="this.src='img/mail_hover.svg';" onmouseout="this.src='img/mail.svg';" alt="Почта"></a></li>
+            <li class="comand-list"><a href="#"><img class="main-link search svg" src="img/search.svg" onmouseover="this.src='img/search_hover.svg';" onmouseout="this.src='img/search.svg';" onclick="openSearch(); closeHeader(); searchFocus()" alt="Поиск"></a></li>
+            <li class="avatar"><a href="staff_profile.html"><img class="main-link_2 avatar_button svg" src="img/avatar.svg" onmouseover="this.src='img/avatar_hover.svg';" onmouseout="this.src='img/avatar.svg';" alt="Аватар"></a></li>
+            <li class="comand-list"><a href="#"><img class="dropbtn main-link_3 login svg" src="img/login.svg" onmouseover="this.src='img/login_hover.svg';" onmouseout="this.src='img/login.svg';" onclick="myFunction()" alt="Личный кабинет"></a></li>
+            
+        </ul>
+    </div>
+    
+<div id="AddModal" class="modal">
+        <div class="modal-content">
+           <div class="cl-btn" onclick="CloseAddModal()"></div>
+            <div class="block-add" onmouseover="clientBlockHover()" onmouseout="clientBlockOut()" onclick="location.href='add_client.html';"><img id="add-img-client" class="block-img" src="img/client.svg" alt=""><p class="block-text-add" id="client-text">Клиент</p></div>
+            <div class="block-add" onmouseover="objectBlockHover()" onmouseout="objectBlockOut()" onclick="location.href='add_realty.html';"><img id="add-img-object" class="block-img" src="img/object.svg" alt=""><p class="block-text-add" id="object-text">Объект</p></div>
+            <div class="block-add" onmouseover="dealBlockHover()" onmouseout="dealBlockOut()" onclick="location.href='deal_card.html';"><img id="add-img-deal" class="block-img" src="img/personal_results.png" alt=""><p class="block-text-add" id="deal-text">Сделка</p></div>
+            </div>
+          </div>
+          
+<div id="VisitModal" class="modal">
+    <div class="modal-content">
+    <div class="cl-btn" onclick="CloseVisitModal()"></div>
+    <form class="form-horizontal">
+    <fieldset>
+    <p class="form-h1-text">Карточка выезда</p>
+    <div class="visit-form">
+    <div class="visit-form-header">
+    <div class="visit-form-data">
+    <label class="form-label-text" for="">Дата и время выезда:</label>  
+        <div class="visit-form-date">
+    <input id="" name="" type="datetime-local" placeholder="" class="visit-form-imput visit-form-date" autocomplete="on">    
+          </div>
+      </div>
+    <div class="visit-form-type-deal">
+    <label class="form-label-text" for="radios">Тип сделки:</label>
+    <div class="radio">
+    <div class="form_radio_btn" onclick="rentOpen()">
+	<input id="rent-id" type="radio" name="radio" value="1" checked>
+	<label for="rent-id">Аренда</label>
+        </div>
+    <div class="form_radio_btn" onclick="saleOpen()">
+	<input id="sale-id" type="radio" name="radio" value="2">
+	<label for="sale-id">Купля-продажа</label>
+            </div>
+	    </div>
+    </div>
+  </div>
+  <br>
+  <div class="visit-form-type-realty">
+  <label class="form-label-text" for="radios">Тип недвижимости:</label>
+  <div class="radio">
+    <div class="form_radio_btn" onclick="residentalBlock()">
+	<input id="radio-realty1" type="radio" name="radio3" value="1" checked>
+	<label for="radio-realty1">Жилая</label>
+</div>
+<div class="form_radio_btn" onclick="comercialBlock();">
+	<input id="radio-realty2" type="radio" name="radio3" value="2">
+	<label for="radio-realty2">Коммерческая</label>
+</div>
+	</div>
+  </div>
+   <br>
+   <div class="visit-form-client">
+    <label class="form-label-text" for="radios-client">Клиент компании:</label>
+  <div class="radio">
+    <div class="form_radio_btn sale" id="visit-seller-button" style="display: none" onclick="openObjectSelect()">
+	<input id="radio-3" type="radio" name="radio2" value="1" checked>
+	<label for="radio-3">Продавец</label>
+</div>
+<div class="form_radio_btn sale" id="visit-bauyer-button" style="display: none" onclick="openObjectAdress()">
+	<input id="radio-4" type="radio" name="radio2" value="2">
+	<label for="radio-4">Покупатель</label>
+</div>
+<div class="form_radio_btn rent" id="visit-landlord-button" onclick="openObjectSelect()">
+	<input id="radio-5" type="radio" name="radio2" value="3" checked>
+	<label for="radio-5">Собственник</label>
+</div>
+<div class="form_radio_btn rent" id="visit-employer-button" onclick="openObjectAdress()">
+	<input id="radio-6" type="radio" name="radio2" value="4">
+	<label for="radio-6">Арендатор</label>
+</div>
+   </div>
+	</div>
+   <br>
+<div class="">
+  <label class="form-label-text" for="checkboxes">Цель выезда:</label><br>
+  <label class="checkbox-btn">
+	<input type="checkbox" checked disabled>
+	<span>Встреча</span>
+</label>
+	
+<label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Фото</span>
+</label>
+	
+<label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Агентский договор</span>
+</label>
+
+<label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Показ</span>
+</label>
+	
+<label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Аванс/Задаток</span>
+</label>
+	
+<label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Сделка</span>
+</label>
+	</div>
+  </div>
+<br>
+<div class="" id="visit-form-object-select">
+<label class="form-group form-label-text" for="user-object-list">Объект:</label><br>
+<select class="visit-form-objectselect" name="user-object-list" required="required">
+  <option value="">Выберите объект</option>
+  <option value="1">Первый объект</option>
+  <option value="2">Второй объект</option>
+  <option value="3">Третий объект</option>
+  <option value="4">Четвертый объект</option>
+  <option value="5">Пятый объект</option>
+  <option value="6">Шестой объект</option>
+</select>
+</div>
+<br>
+<div class="form-group" id="visit-form-object-adress" style="display: none">
+  <label class="form-label-text" for="textinput">Адрес объекта:</label><br>
+  <label class="form-label-text" for="city">г.</label>
+  <input id="city" name="city" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+  <label class="form-label-text" for="street">ул.</label>
+  <input id="street" name="street" type="text" placeholder="" class="visit-form-street visit-form-imput">
+   <label class="form-label-text number-field" for="house">д.</label>
+  <input id="house" name="house" type="number" placeholder="" class="visit-form-imput number-field">
+  <label class="form-label-text number-field" for="building">к.</label>
+  <input id="building" name="building" type="number" placeholder="" class="visit-form-imput number-field">
+  <label class="form-label-text number-field" for="edifice">стр.</label>
+  <input id="edifice" name="edifice" type="number" placeholder="" class="visit-form-imput number-field">
+<label class="form-label-text" for="floor">этаж</label> 
+  <input id="floor" name="floor" type="number" placeholder="" class="visit-form-imput number-field"> 
+  </div>
+  <br>
+<div class="form-group">
+  <label class="form-label-text" for="entrance">подъезд</label>  
+  <input id="entrance" name="entrance" type="number" placeholder="" class="visit-form-imput number-field">
+  <label class="form-label-text" for="doorphone">домофон</label>  
+  <input id="doorphone" name="doorphone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+  <div id="visit-flat" style="display: inline-block; background: none;">
+    <label class="form-label-text" for="flat">кв.</label>
+  <input id="flat" name="flat" type="number" placeholder="" class="visit-form-imput number-field"> 
+  </div>
+  <div id="visit-room" style="display: none; background: none;">
+     <label class="form-label-text" for="room">пом.</label>
+  <input id="room" name="room" type="number" placeholder="" class="visit-form-imput number-field"> 
+  </div>
+  
+  </div>
+  <br>
+<div class="form-group">
+  <label class="form-label-text" for="price">Стоимость объекта:</label>  
+  <input id="price" name="price" type="number" placeholder="" class="number-field-price visit-form-imput-text visit-form-imput">
+   <span class="form-label-text">рублей</span>
+   <span class="form-label-text rent" id="visit-rent-month">в месяц</span>
+  </div>
+<br>
+<div class="form-group">
+  <label class="form-label-text" for="commission">Наша комиссия:</label>
+      <input id="commission" name="commission" class="visit-form-imput number-field" placeholder="" type="number">
+      <span class="form-label-text number-field">%</span>
+    </div>
+    <br>
+<div class="form-group">
+ <p class="form-label-text">Кто платит:</p>
+  <div id="visit-form-rent-comission">
+  <label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Собственник</span>
+</label>
+    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
+      <span class="form-label-text">% </span>
+      
+      <label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Арендатор</span>
+</label>
+    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
+      <span class="form-label-text">% </span>    
+  </div>
+  <div id="visit-form-sale-comission" style="display: none">
+      <label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Продавец</span>
+</label>
+    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
+      <span class="form-label-text">% </span>
+      
+      <label class="checkbox-btn">
+	<input type="checkbox">
+	<span>Покупатель</span>
+</label>
+    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
+      <span class="form-label-text">% </span>
+
+  </div>
+	</div>
+	<br>
+<p class="form-group form-label-text">Контакты:</p>
+<div id="rent-contacts">
+<div class="form-group">
+  <label class="form-label-text" for="landlord">Собственник:</label>
+  <span class="form-label-text landlord-info"> Имя </span>
+  <input id="landlord" name="landlord" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+  <span class="form-label-text phone"> Телефон </span>
+   <input id="landlord-phone" name="landlord-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">    
+  </div>
+<div class="form-group">
+  <label class="form-label-text" for="employer">Арендатор:</label>
+  <span class="form-label-text emploer-info"> Имя </span>  
+  <input id="employer" name="employer" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+   <span class="form-label-text phone"> Телефон </span>
+    <input id="employer-phone" name="employer-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+</div>
+ <br>
+  </div>
+  <div id="sale-contacts" style="display: none">
+  <div class="form-group">
+  <label class="form-label-text" for="seller">Продавец: </label>
+  <span class="form-label-text seller-info"> Имя </span>  
+  <input id="seller" name="seller" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+   <span class="form-label-text phone"> Телефон </span>
+    <input id="seller-phone" name="seller-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+  <br>
+  </div>
+  <div class="form-group">
+  <label class="form-label-text" for="buyer">Покупатель: </label>
+  <span class="form-label-text buyer-info"> Имя </span> 
+  <input id="buyer" name="buyer" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+   <span class="form-label-text phone"> Телефон </span>
+    <input id="buyer-phone" name="buyer-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+  <br>
+     </div>
+     <br> 
+  </div>
+  
+<div class="form-group">
+  <label class="form-label-text" for="broker">Посредник: </label>
+  <span class="form-label-text broker-info"> Имя </span> 
+  <input id="broker" name="broker" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
+  <span class="form-label-text phone"> Телефон </span>
+   <input id="broker-phone" name="broker-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">    
+  </div>
+  <br>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="button1id"></label>
+  <div class="col-md-8">
+    <button id="button1id" type="submit" class="button-submit" >Подтвердить</button>
+    <button id="button2id" type="reset" name="button2id" class="button-reset" onclick="rentOpen(); residentalBlock(); openObjectSelect() ">Сбросить</button>
+  </div>
+</div>
+<br>
+</fieldset>
+</form>
+
+    </div>  
+    </div>
+           
+<div class="search-block" id="search-block">
+        <div class="cl-btn cl-btn-search" onclick="closeSearch(); openHeader(); searchClear()"></div>
+         <img class="search-img" src="img/search_active.svg" alt="">
+          <form action="">
+           <input class="search-modal" id="input-search" type="text" placeholder="Поиск по сайту">
+            </form>
+         
+    </div>
+    
+<div id="noticeModal" class="modal">
+        <div class="modal-content">
+        <div class="cl-btn" onclick="CloseNoticeModal()"></div>
+        
+        <div class="notice-item">
+            <div class="notice-style"><img src="img/phone_call.png" alt=""></div><span class="notice-span">Позвонить клиенту: Иванов И.И.</span>
+            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
+        </div>
+        
+        <div class="notice-item">
+            <div class="notice-style"><img src="img/notice_price_down.png" alt=""></div><span class="notice-span">Нужно скорретировать цену. Объект: ул. Земляной вал, дом 36. Цена 50000 р.</span>
+            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
+        </div>
+        
+        <div class="notice-item">
+            <div class="notice-style"><img src="img/phone_call.png" alt=""></div><span class="notice-span">Позвонить клиенту: Иванов И.И.</span>
+            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
+        </div>
+        
+        <div class="notice-item">
+            <div class="notice-style"><img src="img/notice_comission.png" alt=""></div><span class="notice-span">Нужно договориться по комиссии. Объект: ул. Земляной вал, дом 36. Цена 50000 р.</span>
+            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
+        </div>
+        
+        <div class="notice-item">
+            <div class="notice-style"><img src="img/notice_make_photo.png" alt=""></div><span class="notice-span">Нужно сделать фото. Объект: ул. Земляной вал, дом 36. Цена 50000 р.</span>
+            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
+        </div>
+        
+        </div>
+    </div>
+    
+<div class="dropdown">
+    <div class="dropdown-cabinet-content" id="dropdown-cabinet">
+        <a href="staff_list.html">Сотрудники</a>
+        <a href="customization.html">Настройки</a>
+        <a href="#">Выход</a>
+    </div>
+    </div>
+    
+<hr class="line" color="#DBDADA">
+      
+       
+<div class="container">
+        <a href="index.html"><img class="logo" src="img/logo.svg" alt="logo"></a>
+        <div class="menu">
+        <ul class="menu clearfix">
+            <li class="menu"><a href="clients.html" class="menu-icon"><img class="img-icon" src="img/clients.svg" onmouseover="this.src='img/clients_hover.svg';" onmouseout="this.src='img/clients.svg';" alt="Клиенты"></a></li>
+            <li class="menu"><a href="realty.html" class="menu-icon"><img class="img-icon" src="img/realty.svg" onmouseover="this.src='img/realty_hover.svg';" onmouseout="this.src='img/realty.svg';" alt="Недвижимость"></a></li>
+            <li class="menu"><a href="statistics.html" class="menu-icon"><img class="img-icon" src="img/statistics.svg" onmouseover="this.src='img/statistics_hover.svg';" onmouseout="this.src='img/statistics.svg';" alt="Статистика"></a></li>
+            <li class="menu"><a href="documents.html" class="menu-icon"><img class="img-icon" src="img/documents.svg" onmouseover="this.src='img/documents_hover.svg';" onmouseout="this.src='img/documents.svg';" alt="Документы"></a></li>
+            <li class="menu"><a href="information.html" class="menu-icon"><img class="img-icon" src="img/information.svg" onmouseover="this.src='img/information_hover.svg';" onmouseout="this.src='img/information.svg';" alt="Информация"></a></li>
+            <li class="menu"><a href="makreting.html" class="menu-icon"><img class="img-icon" src="img/marketing.svg" onmouseover="this.src='img/marketing_hover.svg';" onmouseout="this.src='img/marketing.svg';" alt="Реклама"></a></li>
+        </ul>
+    </div>
+    </div>
+    
+<div class="workspace clearfix">
+        <p class="slogan">Надежность. Качество. Комфорт.</p>
+        <div class="clearfix"></div>
+        <div class="video-presentation"><a href="#"><img src="img/video_presentation.svg" alt="Видео презентация"></a></div>
+        <div class="clr clearfix"></div>
+        
+        
+    </div>
+    
+<div class="footer clearfix">
+        <hr class="footer-line" color="#DBDADA">
+        <p class="footer-text">Центр недвижимости Эльнова. Все права защищены &copy;&nbsp;2020</p>
+    </div>
+
+
+<script src="/static/js/header-scripts.js"></script>
+
+<script>
+    function myFunction() {
+    document.getElementById("dropdown-cabinet").classList.toggle("show");
+};
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+var dropdowns = document.getElementsByClassName("dropdown-cabinet-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+};
+    </script>
+    
+
+
+</body>
+</html>

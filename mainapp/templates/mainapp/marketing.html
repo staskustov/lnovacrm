@@ -1,0 +1,56 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block workspase %}
+<div class="workspace clearfix">
+        <div class="block" onmouseover="blockCianHover()" onmouseout="blockCianOut()"><a href="#" class="block-icon"><img id="cian_img" class="block-img" src="{% static 'img/cian.png' %}"  alt="Циан"></a><p id="cian_text" class="block-text">Циан</p></div>
+        <div class="block" onmouseover="blockAvitoHover()" onmouseout="blockAvitoOut()"><a href="#" class="block-icon"><img id="avito_img" class="block-img" src="{% static 'img/avito.png' %}"  alt="Авито"></a><p id="avito_text" class="block-text">Авито</p></div>
+        <div class="block" onmouseover="blockYandexRealtyHover()" onmouseout="blockYandexRealtyOut()"><a href="#" class="block-icon"><img id="yandex_realty_img" class="block-img" src="{% static 'img/yandex_realty.png' %}" alt="Яндекс недвижимость"></a><p id="yandex_realty_text" class="block-text-big">Яндекс недвижимость</p></div>
+        <div class="clr2 clearfix"></div>
+    </div>
+{% endblock workspase %}
+
+{% block js %}
+<script>
+
+var block_img_cian = document.getElementById("cian_img");
+var block_img_avito = document.getElementById("avito_img");
+var block_img_yandex_realty = document.getElementById("yandex_realty_img");
+    
+var block_text_cian = document.getElementById("cian_text");
+var block_text_avito = document.getElementById("avito_text");
+var block_text_yandex_realty = document.getElementById("yandex_realty_text"); 
+    
+
+function blockCianHover() {
+    block_img_cian.src = '{% static 'img/cian_hover.png' %}';
+    block_text_cian.style.color = "#3E8CE0";
+ };
+    
+function blockCianOut() {
+    block_img_cian.src = '{% static 'img/cian.png' %}';
+    block_text_cian.style.color = "white";
+ }; 
+    
+ function blockAvitoHover() {
+    block_img_avito.src = '{% static 'img/avito_hover.png' %}';
+    block_text_avito.style.color = "#3E8CE0";
+ };
+    
+function blockAvitoOut() {
+    block_img_avito.src = '{% static 'img/avito.png' %}';
+    block_text_avito.style.color = "white";
+ };    
+
+function blockYandexRealtyHover() {
+    block_img_yandex_realty.src = '{% static 'img/yandex_realty_hover.png' %}';
+    block_text_yandex_realty.style.color = "#3E8CE0";
+ };
+    
+function blockYandexRealtyOut() {
+    block_img_yandex_realty.src = '{% static 'img/yandex_realty.png' %}';
+    block_text_yandex_realty.style.color = "white";
+ };  
+    
+</script>
+{% endblock js %}

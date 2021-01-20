@@ -1,352 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Недвижимость</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="/static/css/realty-object.css">
-    <link rel="stylesheet" href="/static/css/header_buttons.css">
-</head>
-<body>
-<div class="header" id="header-id">
-       <div class="h1"><p class="header-title">Недвижимость</p></div>
-        <ul class="header-comand clearfix">
-            <li class="comand-list"><a href="#" ><img id="add" class="main-link add add-dropbtn svg" src="img/add.svg" onmouseover="this.src='img/add_hover.svg';" onclick="OpenAddModal(); AddClick()" onmouseout="this.src='img/add.svg';" alt="Добавить"></a></li>
-            <li class="comand-list"><a href="#" ><img id="visit" class="main-link visit svg" src="img/visit.svg" onmouseover="this.src='img/visit_hover.svg';" onmouseout="this.src='img/visit.svg';"  onclick="OpenVisitModal(); VisitClick()" alt="Запись на выезд"></a></li>
-            <li class="comand-list"><a href="#"><img class="main-link alert svg" src="img/alert.svg" onmouseover="this.src='img/alert_hover.svg';" onmouseout="this.src='img/alert.svg';" onclick="OpenNoticeModal()" alt="Уведомления"></a></li>
-            <li class="comand-list"><a href="calendar.html"><img class="main-link calendar svg" src="img/calendar.svg" onmouseover="this.src='img/calendar_hover.svg';" onmouseout="this.src='img/calendar.svg';" alt="Календарь"></a></li>
-            <li class="mail-link"><a href="mail.html"><img class="main-link mail svg" src="img/mail.svg" onmouseover="this.src='img/mail_hover.svg';" onmouseout="this.src='img/mail.svg';" alt="Почта"></a></li>
-            <li class="comand-list"><a href="#"><img class="main-link search svg" src="img/search.svg" onmouseover="this.src='img/search_hover.svg';" onmouseout="this.src='img/search.svg';" onclick="openSearch(); closeHeader(); searchFocus()" alt="Поиск"></a></li>
-            <li class="avatar"><a href="staff_profile.html"><img class="main-link_2 avatar_button svg" src="img/avatar.svg" onmouseover="this.src='img/avatar_hover.svg';" onmouseout="this.src='img/avatar.svg';" alt="Аватар"></a></li>
-            <li class="comand-list"><a href="#"><img class="dropbtn main-link_3 login svg" src="img/login.svg" onmouseover="this.src='img/login_hover.svg';" onmouseout="this.src='img/login.svg';" onclick="myFunction()" alt="Личный кабинет"></a></li>
-            
-        </ul>
-    </div>
-    
-<div id="AddModal" class="modal">
-        <div class="modal-content">
-           <div class="cl-btn" onclick="CloseAddModal()"></div>
-            <div class="block-add" onmouseover="clientBlockHover()" onmouseout="clientBlockOut()" onclick="location.href='add_client.html';"><img id="add-img-client" class="block-img" src="img/client.svg" alt=""><p class="block-text-add" id="client-text">Клиент</p></div>
-            <div class="block-add" onmouseover="objectBlockHover()" onmouseout="objectBlockOut()" onclick="location.href='add_realty.html';"><img id="add-img-object" class="block-img" src="img/object.svg" alt=""><p class="block-text-add" id="object-text">Объект</p></div>
-            <div class="block-add" onmouseover="dealBlockHover()" onmouseout="dealBlockOut()" onclick="location.href='deal_card.html';"><img id="add-img-deal" class="block-img" src="img/personal_results.png" alt=""><p class="block-text-add" id="deal-text">Сделка</p></div>
-            </div>
-          </div>         
-<div id="VisitModal" class="modal">
-    <div class="modal-content">
-    <div class="cl-btn" onclick="CloseVisitModal()"></div>
-    <form class="form-horizontal">
-    <fieldset>
-    <p class="form-h1-text">Карточка выезда</p>
-    <div class="visit-form">
-    <div class="visit-form-header">
-    <div class="visit-form-data">
-    <label class="form-label-text" for="">Дата и время выезда:</label>  
-        <div class="visit-form-date">
-    <input id="" name="" type="datetime-local" placeholder="" class="visit-form-imput visit-form-date" autocomplete="on">    
-          </div>
-      </div>
-    <div class="visit-form-type-deal">
-    <label class="form-label-text" for="radios">Тип сделки:</label>
-    <div class="radio">
-    <div class="form_radio_btn" onclick="rentOpen()">
-	<input id="rent-id" type="radio" name="radio" value="1" checked>
-	<label for="rent-id">Аренда</label>
-        </div>
-    <div class="form_radio_btn" onclick="saleOpen()">
-	<input id="sale-id" type="radio" name="radio" value="2">
-	<label for="sale-id">Купля-продажа</label>
-            </div>
-	    </div>
-    </div>
-  </div>
-  <br>
-  <div class="visit-form-type-realty">
-  <label class="form-label-text" for="radios">Тип недвижимости:</label>
-  <div class="radio">
-    <div class="form_radio_btn" onclick="residentalBlock()">
-	<input id="radio-realty1" type="radio" name="radio3" value="1" checked>
-	<label for="radio-realty1">Жилая</label>
-</div>
-<div class="form_radio_btn" onclick="comercialBlock();">
-	<input id="radio-realty2" type="radio" name="radio3" value="2">
-	<label for="radio-realty2">Коммерческая</label>
-</div>
-	</div>
-  </div>
-   <br>
-   <div class="visit-form-client">
-    <label class="form-label-text" for="radios-client">Клиент компании:</label>
-  <div class="radio">
-    <div class="form_radio_btn sale" id="visit-seller-button" style="display: none" onclick="openObjectSelect()">
-	<input id="radio-3" type="radio" name="radio2" value="1" checked>
-	<label for="radio-3">Продавец</label>
-</div>
-<div class="form_radio_btn sale" id="visit-bauyer-button" style="display: none" onclick="openObjectAdress()">
-	<input id="radio-4" type="radio" name="radio2" value="2">
-	<label for="radio-4">Покупатель</label>
-</div>
-<div class="form_radio_btn rent" id="visit-landlord-button" onclick="openObjectSelect()">
-	<input id="radio-5" type="radio" name="radio2" value="3" checked>
-	<label for="radio-5">Собственник</label>
-</div>
-<div class="form_radio_btn rent" id="visit-employer-button" onclick="openObjectAdress()">
-	<input id="radio-6" type="radio" name="radio2" value="4">
-	<label for="radio-6">Арендатор</label>
-</div>
-   </div>
-	</div>
-   <br>
-<div class="">
-  <label class="form-label-text" for="checkboxes">Цель выезда:</label><br>
-  <label class="checkbox-btn">
-	<input type="checkbox" checked disabled>
-	<span>Встреча</span>
-</label>
-	
-<label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Фото</span>
-</label>
-	
-<label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Агентский договор</span>
-</label>
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-<label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Показ</span>
-</label>
-	
-<label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Аванс/Задаток</span>
-</label>
-	
-<label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Сделка</span>
-</label>
-	</div>
-  </div>
-<br>
-<div class="" id="visit-form-object-select">
-<label class="form-group form-label-text" for="user-object-list">Объект:</label><br>
-<select class="visit-form-objectselect" name="user-object-list" required="required">
-  <option value="">Выберите объект</option>
-  <option value="1">Первый объект</option>
-  <option value="2">Второй объект</option>
-  <option value="3">Третий объект</option>
-  <option value="4">Четвертый объект</option>
-  <option value="5">Пятый объект</option>
-  <option value="6">Шестой объект</option>
-</select>
-</div>
-<br>
-<div class="form-group" id="visit-form-object-adress" style="display: none">
-  <label class="form-label-text" for="textinput">Адрес объекта:</label><br>
-  <label class="form-label-text" for="city">г.</label>
-  <input id="city" name="city" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-  <label class="form-label-text" for="street">ул.</label>
-  <input id="street" name="street" type="text" placeholder="" class="visit-form-street visit-form-imput">
-   <label class="form-label-text number-field" for="house">д.</label>
-  <input id="house" name="house" type="number" placeholder="" class="visit-form-imput number-field">
-  <label class="form-label-text number-field" for="building">к.</label>
-  <input id="building" name="building" type="number" placeholder="" class="visit-form-imput number-field">
-  <label class="form-label-text number-field" for="edifice">стр.</label>
-  <input id="edifice" name="edifice" type="number" placeholder="" class="visit-form-imput number-field">
-<label class="form-label-text" for="floor">этаж</label> 
-  <input id="floor" name="floor" type="number" placeholder="" class="visit-form-imput number-field"> 
-  </div>
-  <br>
-<div class="form-group">
-  <label class="form-label-text" for="entrance">подъезд</label>  
-  <input id="entrance" name="entrance" type="number" placeholder="" class="visit-form-imput number-field">
-  <label class="form-label-text" for="doorphone">домофон</label>  
-  <input id="doorphone" name="doorphone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-  <div id="visit-flat" style="display: inline-block; background: none;">
-    <label class="form-label-text" for="flat">кв.</label>
-  <input id="flat" name="flat" type="number" placeholder="" class="visit-form-imput number-field"> 
-  </div>
-  <div id="visit-room" style="display: none; background: none;">
-     <label class="form-label-text" for="room">пом.</label>
-  <input id="room" name="room" type="number" placeholder="" class="visit-form-imput number-field"> 
-  </div>
-  
-  </div>
-  <br>
-<div class="form-group">
-  <label class="form-label-text" for="price">Стоимость объекта:</label>  
-  <input id="price" name="price" type="number" placeholder="" class="number-field-price visit-form-imput-text visit-form-imput">
-   <span class="form-label-text">рублей</span>
-   <span class="form-label-text rent" id="visit-rent-month">в месяц</span>
-  </div>
-<br>
-<div class="form-group">
-  <label class="form-label-text" for="commission">Наша комиссия:</label>
-      <input id="commission" name="commission" class="visit-form-imput number-field" placeholder="" type="number">
-      <span class="form-label-text number-field">%</span>
-    </div>
-    <br>
-<div class="form-group">
- <p class="form-label-text">Кто платит:</p>
-  <div id="visit-form-rent-comission">
-  <label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Собственник</span>
-</label>
-    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
-      <span class="form-label-text">% </span>
-      
-      <label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Арендатор</span>
-</label>
-    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
-      <span class="form-label-text">% </span>    
-  </div>
-  <div id="visit-form-sale-comission" style="display: none">
-      <label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Продавец</span>
-</label>
-    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
-      <span class="form-label-text">% </span>
-      
-      <label class="checkbox-btn">
-	<input type="checkbox">
-	<span>Покупатель</span>
-</label>
-    <input id="appendedtext" name="appendedtext" class="visit-form-imput number-field" placeholder="" type="number">
-      <span class="form-label-text">% </span>
-
-  </div>
-	</div>
-	<br>
-<p class="form-group form-label-text">Контакты:</p>
-<div id="rent-contacts">
-<div class="form-group">
-  <label class="form-label-text" for="landlord">Собственник:</label>
-  <span class="form-label-text landlord-info"> Имя </span>
-  <input id="landlord" name="landlord" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-  <span class="form-label-text phone"> Телефон </span>
-   <input id="landlord-phone" name="landlord-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">    
-  </div>
-<div class="form-group">
-  <label class="form-label-text" for="employer">Арендатор:</label>
-  <span class="form-label-text emploer-info"> Имя </span>  
-  <input id="employer" name="employer" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-   <span class="form-label-text phone"> Телефон </span>
-    <input id="employer-phone" name="employer-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-</div>
- <br>
-  </div>
-  <div id="sale-contacts" style="display: none">
-  <div class="form-group">
-  <label class="form-label-text" for="seller">Продавец: </label>
-  <span class="form-label-text seller-info"> Имя </span>  
-  <input id="seller" name="seller" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-   <span class="form-label-text phone"> Телефон </span>
-    <input id="seller-phone" name="seller-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-  <br>
-  </div>
-  <div class="form-group">
-  <label class="form-label-text" for="buyer">Покупатель: </label>
-  <span class="form-label-text buyer-info"> Имя </span> 
-  <input id="buyer" name="buyer" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-   <span class="form-label-text phone"> Телефон </span>
-    <input id="buyer-phone" name="buyer-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-  <br>
-     </div>
-     <br> 
-  </div>
-  
-<div class="form-group">
-  <label class="form-label-text" for="broker">Посредник: </label>
-  <span class="form-label-text broker-info"> Имя </span> 
-  <input id="broker" name="broker" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">
-  <span class="form-label-text phone"> Телефон </span>
-   <input id="broker-phone" name="broker-phone" type="text" placeholder="" class="visit-form-imput-text visit-form-imput">    
-  </div>
-  <br>
-<div class="form-group">
-  <label class="col-md-4 control-label" for="button1id"></label>
-  <div class="col-md-8">
-    <button id="button1id" type="submit" class="button-submit" >Подтвердить</button>
-    <button id="button2id" type="reset" name="button2id" class="button-reset" onclick="rentOpen(); residentalBlock(); openObjectSelect() ">Сбросить</button>
-  </div>
-</div>
-<br>
-</fieldset>
-</form>
-
-    </div>  
-    </div>          
-<div class="search-block" id="search-block">
-        <div class="cl-btn cl-btn-search" onclick="closeSearch(); openHeader(); searchClear()"></div>
-         <img class="search-img" src="img/search_active.svg" alt="">
-          <form action="">
-           <input class="search-modal" id="input-search" type="text" placeholder="Поиск по сайту">
-            </form>
-         
-    </div>
-    
-<div id="noticeModal" class="modal">
-        <div class="modal-content">
-        <div class="cl-btn" onclick="CloseNoticeModal()"></div>
-        
-        <div class="notice-item">
-            <div class="notice-style"><img src="img/phone_call.png" alt=""></div><span class="notice-span">Позвонить клиенту: Иванов И.И.</span>
-            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
-        </div>
-        
-        <div class="notice-item">
-            <div class="notice-style"><img src="img/notice_price_down.png" alt=""></div><span class="notice-span">Нужно скорретировать цену. Объект: ул. Земляной вал, дом 36. Цена 50000 р.</span>
-            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
-        </div>
-        
-        <div class="notice-item">
-            <div class="notice-style"><img src="img/phone_call.png" alt=""></div><span class="notice-span">Позвонить клиенту: Иванов И.И.</span>
-            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
-        </div>
-        
-        <div class="notice-item">
-            <div class="notice-style"><img src="img/notice_comission.png" alt=""></div><span class="notice-span">Нужно договориться по комиссии. Объект: ул. Земляной вал, дом 36. Цена 50000 р.</span>
-            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
-        </div>
-        
-        <div class="notice-item">
-            <div class="notice-style"><img src="img/notice_make_photo.png" alt=""></div><span class="notice-span">Нужно сделать фото. Объект: ул. Земляной вал, дом 36. Цена 50000 р.</span>
-            <div class="notice-style"><img src="img/done.png" onclick="this.src='img/done_active.png';" alt=""></div>
-        </div>
-        
-        </div>
-    </div>
-    
-<div class="dropdown">
-    <div class="dropdown-cabinet-content" id="dropdown-cabinet">
-        <a href="staff_list.html">Сотрудники</a>
-        <a href="customization.html">Настройки</a>
-        <a href="#">Выход</a>
-        </div>
-    </div>
-        
-<hr class="line" color="#DBDADA">
-       
-<div class="container">
-        <a href="index.html"><img class="logo" src="img/logo.svg" alt="logo"></a>
-        <div class="menu">
-        <ul class="menu clearfix">
-            <li class="menu"><a href="clients.html" class="menu-icon"><img class="img-icon" src="img/clients_grey.svg" onmouseover="this.src='img/clients_hover.svg';" onmouseout="this.src='img/clients_grey.svg';" alt="Клиенты"></a></li>
-            <li class="menu"><a href="#" class="menu-icon"><img class="img-icon" src="img/realty_active.svg" alt="Недвижимость"></a></li>
-            <li class="menu"><a href="statistics.html" class="menu-icon"><img class="img-icon" src="img/statistics_grey.svg" onmouseover="this.src='img/statistics_hover.svg';" onmouseout="this.src='img/statistics_grey.svg';" alt="Статистика"></a></li>
-            <li class="menu"><a href="documents.html" class="menu-icon"><img class="img-icon" src="img/documents_grey.svg" onmouseover="this.src='img/documents_hover.svg';" onmouseout="this.src='img/documents_grey.svg';" alt="Документы"></a></li>
-            <li class="menu"><a href="information.html" class="menu-icon"><img class="img-icon" src="img/information_grey.svg" onmouseover="this.src='img/information_hover.svg';" onmouseout="this.src='img/information_grey.svg';" alt="Информация"></a></li>
-            <li class="menu"><a href="makreting.html" class="menu-icon"><img class="img-icon" src="img/marketing_grey.svg" onmouseover="this.src='img/marketing_hover.svg';" onmouseout="this.src='img/marketing_grey.svg';" alt="Реклама"></a></li>
-        </ul>
-    </div>
-    </div>
-    
+{% block workspase %}
 <div class="workspace-realty">
      
 <div class="objects-filter" id="object-filters" >
@@ -392,7 +47,7 @@
        <span class="form-label-text">руб.</span>
       </div>
       
-    <div class=""><button class="metrobtn"><img src="img/metro.png" alt=""> Метро</button></div>
+    <div class=""><button class="metrobtn"><img src="{% static 'img/metro.png' %}" alt=""> Метро</button></div>
       
     <div class="form-objectselect">
         <select class="branch-staff-select" name="branch-staff-list">
@@ -547,191 +202,191 @@
     
     <div class="">
        <div class="marketingBlock">
-    <img src="img/company_site_logo.svg" alt="" style="margin-right: 10px; margin-top: 10px;">
+    <img src="{% static 'img/company_site_logo.svg' %}" alt="" style="margin-right: 10px; margin-top: 10px;">
     <div class="radio" >
     <div class="form_radio_btn" onclick="lnovaBasicImgChange()">
 	<input id="lnova-basic" type="radio" name="lnova-marketing" value="1">
-	<label for="lnova-basic"><img id="img-lnova-basic" class="img-icon" src="img/lnova_marketing.svg" alt=""></label>
+	<label for="lnova-basic"><img id="img-lnova-basic" class="img-icon" src="{% static 'img/lnova_marketing.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="lnovaTopImgChange()">
 	<input id="lnova-top" type="radio" name="lnova-marketing" value="2">
-	<label for="lnova-top"><img id="img-lnova-top" class="img-icon" src="img/Lnova_marketing_top.svg" alt=""></label>
+	<label for="lnova-top"><img id="img-lnova-top" class="img-icon" src="{% static 'img/Lnova_marketing_top.svg' %}" alt=""></label>
         </div>
       </div>    
     </div>
     
     <div class="marketingBlock">
-    <img src="img/cian_logo.svg" alt="" style="margin-right: 12px; margin-top: 10px;">
+    <img src="{% static 'img/cian_logo.svg' %}" alt="" style="margin-right: 12px; margin-top: 10px;">
     <div class="radio">
     <div class="form_radio_btn" onclick="changeImgCianPay()">
 	<input id="cian-basic" type="radio" name="cian-marketing" value="1">
-	<label for="cian-basic"><img id="img-cian-pay" class="img-icon" src="img/cian_pay.svg" alt="" ></label>
+	<label for="cian-basic"><img id="img-cian-pay" class="img-icon" src="{% static 'img/cian_pay.svg' %}" alt="" ></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgCianPremium()">
 	<input id="cian-premium" type="radio" name="cian-marketing" value="2">
-	<label for="cian-premium"><img id="img-cian-premium" class="img-icon" src="img/cian_premium.svg" alt="" ></label>
+	<label for="cian-premium"><img id="img-cian-premium" class="img-icon" src="{% static 'img/cian_premium.svg' %}" alt="" ></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgCianTop()">
 	<input id="cian-top" type="radio" name="cian-marketing" value="3">
-	<label for="cian-top"><img id="img-cian-top" class="img-icon" src="img/cian_top.svg" alt="" ></label>
+	<label for="cian-top"><img id="img-cian-top" class="img-icon" src="{% static 'img/cian_top.svg' %}" alt="" ></label>
         </div>
       </div>
       
     <div class="" style="margin-left: 78px">
     <label  class="checkbox-btn" >
 	<input onchange="changeImgCianAuction()" id="cian-auction-checkbox" type="checkbox">
-	<span style="width: 34px;"><img style="margin-left: 7px" id="img-cian-auction" class="img-icon" src="img/cian_auction.svg" alt="" ></span>
+	<span style="width: 34px;"><img style="margin-left: 7px" id="img-cian-auction" class="img-icon" src="{% static 'img/cian_auction.svg' %}" alt="" ></span>
         </label> 
 
     
 	
     <label class="checkbox-btn">
 	<input onchange="changeImgCianColor()" id="cian-color-checkbox" type="checkbox">
-	<span style="width: 34px;"><img style="margin-left: 7px" id="img-cian-color" class="img-icon" src="img/cian_color.svg" alt="" ></span>
+	<span style="width: 34px;"><img style="margin-left: 7px" id="img-cian-color" class="img-icon" src="{% static 'img/cian_color.svg' %}" alt="" ></span>
         </label>
       </div>
     </div>
     
     <div class="marketingBlock">
-    <img src="img/avito_logo.svg" alt="" style="margin-right: 10px; margin-top: 10px;">
+    <img src="{% static 'img/avito_logo.svg' %}" alt="" style="margin-right: 10px; margin-top: 10px;">
     <div class="radio">
     <div class="form_radio_btn" onclick="avitoPayImgChange()">
 	<input id="avito-basic" type="radio" name="avito-marketing" value="1">
-	<label for="avito-basic"><img id="avito-pay" class="img-icon" src="img/avito_pay.svg" alt="" ></label>
+	<label for="avito-basic"><img id="avito-pay" class="img-icon" src="{% static 'img/avito_pay.svg' %}" alt="" ></label>
         </div>
     <div class="form_radio_btn" onclick="avitoX2ImgChange()">
 	<input id="avito-x2" type="radio" name="avito-marketing" value="2">
-	<label for="avito-x2"><img id="avito-x2-img" class="img-icon" src="img/avitoX2.svg" alt=""></label>
+	<label for="avito-x2"><img id="avito-x2-img" class="img-icon" src="{% static 'img/avitoX2.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="avitoX5ImgChange()">
 	<input id="avito-x5" type="radio" name="avito-marketing" value="3">
-	<label for="avito-x5"><img id="avito-x5-img" class="img-icon" src="img/avitoX5.svg" alt="" ></label>
+	<label for="avito-x5"><img id="avito-x5-img" class="img-icon" src="{% static 'img/avitoX5.svg' %}" alt="" ></label>
         </div>
     <div class="form_radio_btn" onclick="avitoX10ImgChange()">
 	<input id="avito-x10" type="radio" name="avito-marketing" value="3">
-	<label for="avito-x10"><img id="avito-x10-img" class="img-icon" src="img/avitoX10.svg" alt="" ></label>
+	<label for="avito-x10"><img id="avito-x10-img" class="img-icon" src="{% static 'img/avitoX10.svg' %}" alt="" ></label>
         </div>
       </div>
       
        <div class="" style="margin-left: 10px">
     <label  class="checkbox-btn" >
 	<input onchange="changeImgAvitoXl()" id="avito-xl-checkbox" type="checkbox">
-	<span style="width: 34px;"><img style="margin-left: 7px" id="img-avito-xl" class="img-icon" src="img/avito_xl.svg" alt="" ></span>
+	<span style="width: 34px;"><img style="margin-left: 7px" id="img-avito-xl" class="img-icon" src="{% static 'img/avito_xl.svg' %}" alt="" ></span>
         </label> 
 
     <label class="checkbox-btn">
 	<input onchange="changeImgAvitoColor()" id="avito-color-checkbox" type="checkbox">
-	<span style="width: 34px;"><img style="margin-left: 7px" id="img-avito-color" class="img-icon" src="img/avito_color.svg" alt="" ></span>
+	<span style="width: 34px;"><img style="margin-left: 7px" id="img-avito-color" class="img-icon" src="{% static 'img/avito_color.svg' %}" alt="" ></span>
         </label>
         
         <label class="checkbox-btn">
 	<input onchange="changeImgAvitoDomofond()" id="avito-domofond-premium-checkbox" type="checkbox">
-	<span style="width: 34px;"><img style="margin-left: 7px" id="img-avito-domofond" class="img-icon" src="img/avito_domofond_premium.svg" alt="" ></span>
+	<span style="width: 34px;"><img style="margin-left: 7px" id="img-avito-domofond" class="img-icon" src="{% static 'img/avito_domofond_premium.svg' %}" alt="" ></span>
         </label>
       </div>       
     </div>
     
      <div class="marketingBlock">
-    <img src="img/yandex_realty_logo.svg" alt="" style="margin-right: 10px; margin-top: 10px;">
+    <img src="{% static 'img/yandex_realty_logo.svg' %}" alt="" style="margin-right: 10px; margin-top: 10px;">
     <div class="radio">
     <div class="form_radio_btn" onclick="changeImgYandexPay()">
 	<input id="yandex-basic" type="radio" name="yandex-marketing" value="1">
-	<label for="yandex-basic"><img id="img-yandex-pay" class="img-icon" src="img/yandex_pay.svg" alt=""></label>
+	<label for="yandex-basic"><img id="img-yandex-pay" class="img-icon" src="{% static 'img/yandex_pay.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgYandexUp()">
 	<input id="yandex-up" type="radio" name="yandex-marketing" value="2">
-	<label for="yandex-up"><img id="img-yandex-up" class="img-icon" src="img/yandex_up.svg" alt=""></label>
+	<label for="yandex-up"><img id="img-yandex-up" class="img-icon" src="{% static 'img/yandex_up.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgYandexPremium()">
 	<input id="yandex-premium" type="radio" name="yandex-marketing" value="3">
-	<label for="yandex-premium"><img id="img-yandex-premium" class="img-icon" src="img/yandex_premium.svg" alt=""></label>
+	<label for="yandex-premium"><img id="img-yandex-premium" class="img-icon" src="{% static 'img/yandex_premium.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgYandexTop()">
 	<input id="yandex-top" type="radio" name="yandex-marketing" value="3">
-	<label for="yandex-top"><img id="img-yandex-top" class="img-icon" src="img/yandex_top.svg" alt=""></label>
+	<label for="yandex-top"><img id="img-yandex-top" class="img-icon" src="{% static 'img/yandex_top.svg' %}" alt=""></label>
         </div>
       </div>    
     </div>  
     </div>
     <div class="">
     <div class="marketingBlock">
-    <img src="img/youla_logo.svg" alt="" style="margin-right: 10px; margin-top: 10px;">
+    <img src="{% static 'img/youla_logo.svg' %}" alt="" style="margin-right: 10px; margin-top: 10px;">
     <div class="radio" >
     <div class="form_radio_btn" onclick="changeImgYoulaPay()">
 	<input id="youla-basic" type="radio" name="youla-marketing" value="1">
-	<label for="youla-basic"><img id="img-youla-basic" class="img-icon" src="img/youla_basic.svg" alt=""></label>
+	<label for="youla-basic"><img id="img-youla-basic" class="img-icon" src="{% static 'img/youla_basic.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgYoulaUp()">
 	<input id="youla-up" type="radio" name="youla-marketing" value="2">
-	<label for="youla-up"><img id="img-youla-up" class="img-icon" src="img/youla_up.svg" alt=""></label>
+	<label for="youla-up"><img id="img-youla-up" class="img-icon" src="{% static 'img/youla_up.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgYoulaTurbo()">
 	<input id="youla-turbo" type="radio" name="youla-marketing" value="3">
-	<label for="youla-turbo"><img id="img-youla-turbo" class="img-icon" src="img/youla_turbo.svg" alt=""></label>
+	<label for="youla-turbo"><img id="img-youla-turbo" class="img-icon" src="{% static 'img/youla_turbo.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgYoulaPremium()">
 	<input id="youla-premium" type="radio" name="youla-marketing" value="4">
-	<label for="youla-premium"><img id="img-youla-premium" class="img-icon" src="img/youla_premium.svg" alt=""></label>
+	<label for="youla-premium"><img id="img-youla-premium" class="img-icon" src="{% static 'img/youla_premium.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgYoulaMaximum()">
 	<input id="youla-maximum" type="radio" name="youla-marketing" value="5">
-	<label for="youla-maximum"><img id="img-youla-maximum" class="img-icon" src="img/youla_maximum.svg" alt=""></label>
+	<label for="youla-maximum"><img id="img-youla-maximum" class="img-icon" src="{% static 'img/youla_maximum.svg' %}" alt=""></label>
         </div>
       </div>    
     </div>
     
     <div class="marketingBlock">
-    <img src="img/irr_logo.svg" alt="" style="margin-right: 12px; margin-top: 10px;">
+    <img src="{% static 'img/irr_logo.svg' %}" alt="" style="margin-right: 12px; margin-top: 10px;">
     <div class="radio">
     <div class="form_radio_btn" onclick="">
 	<input id="irr-basic" type="radio" name="irr-marketing" value="1">
-	<label for="irr-basic"><img id="img-irr-pay" class="img-icon" src="img/irr_pay.svg" alt="" ></label>
+	<label for="irr-basic"><img id="img-irr-pay" class="img-icon" src="{% static 'img/irr_pay.svg' %}" alt="" ></label>
         </div>
       </div>
       
     </div>
     
     <div class="marketingBlock">
-    <img src="img/domclick_logo.svg" alt="" style="margin-right: 10px; margin-top: 10px;">
+    <img src="{% static 'img/domclick_logo.svg' %}" alt="" style="margin-right: 10px; margin-top: 10px;">
     <div class="radio">
     <div class="form_radio_btn" onclick="changeImgDomclickPay()">
 	<input id="domclick-basic" type="radio" name="domclick-marketing" value="1">
-	<label for="domclick-basic"><img id="domclick-pay-img" class="img-icon" src="img/domclick_basic.svg" alt="" ></label>
+	<label for="domclick-basic"><img id="domclick-pay-img" class="img-icon" src="{% static 'img/domclick_basic.svg' %}" alt="" ></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgDomclickExpress()">
 	<input id="domclick-express" type="radio" name="domclick-marketing" value="2">
-	<label for="domclick-express"><img id="domclick-express-img" class="img-icon" src="img/domclick_express.svg" alt=""></label>
+	<label for="domclick-express"><img id="domclick-express-img" class="img-icon" src="{% static 'img/domclick_express.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgDomclickPremium()">
 	<input id="domclick-premium" type="radio" name="domclick-marketing" value="3">
-	<label for="domclick-premium"><img id="domclick-premium-img" class="img-icon" src="img/domclick_premium.svg" alt="" ></label>
+	<label for="domclick-premium"><img id="domclick-premium-img" class="img-icon" src="{% static 'img/domclick_premium.svg' %}" alt="" ></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgDomclickTop()">
 	<input id="domclick-top" type="radio" name="domclick-marketing" value="4">
-	<label for="domclick-top"><img id="domclick-top-img" class="img-icon" src="img/domclick_top.svg" alt=""></label>
+	<label for="domclick-top"><img id="domclick-top-img" class="img-icon" src="{% static 'img/domclick_top.svg' %}" alt=""></label>
         </div>
       </div>
             
     </div>
     
     <div class="marketingBlock">
-    <img src="img/move_logo.svg" alt="" style="margin-right: 10px; margin-top: 10px;">
+    <img src="{% static 'img/move_logo.svg' %}" alt="" style="margin-right: 10px; margin-top: 10px;">
     <div class="radio">
     <div class="form_radio_btn" onclick="changeImgMovePay()">
 	<input id="move-pay" type="radio" name="move-marketing" value="1">
-	<label for="move-pay"><img id="img-move-pay" class="img-icon" src="img/move_pay.svg" alt=""></label>
+	<label for="move-pay"><img id="img-move-pay" class="img-icon" src="{% static 'img/move_pay.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgMoveUp()">
 	<input id="move-up" type="radio" name="move-marketing" value="2">
-	<label for="move-up"><img id="img-move-up" class="img-icon" src="img/move_up.svg" alt=""></label>
+	<label for="move-up"><img id="img-move-up" class="img-icon" src="{% static 'img/move_up.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgMovePremium()">
 	<input id="move-premium" type="radio" name="move-marketing" value="3">
-	<label for="move-premium"><img id="img-move-premium" class="img-icon" src="img/move_premium.svg" alt=""></label>
+	<label for="move-premium"><img id="img-move-premium" class="img-icon" src="{% static 'img/move_premium.svg' %}" alt=""></label>
         </div>
     <div class="form_radio_btn" onclick="changeImgMoveFix()">
 	<input id="move-fix" type="radio" name="move-marketing" value="4">
-	<label for="move-fix"><img id="img-move-fix" class="img-icon" src="img/move_fix.svg" alt=""></label>
+	<label for="move-fix"><img id="img-move-fix" class="img-icon" src="{% static 'img/move_fix.svg' %}" alt=""></label>
         </div>
       </div>    
     </div>  
@@ -742,9 +397,9 @@
       
 </div>           
                    
-<div id="object-filter-base-arrow" class="object-filter-additional-arrow"><div onclick="openFilterBlock()" id="arrow-down-block" ><img class="arrow-down" src="img/arrow_down.svg" alt="Еще фильтры" onmouseover="this.src='img/arrow_down_hover.svg'; mainfilterBlockHover();" onmouseout="this.src='img/arrow_down.svg'; mainfilterBlockOut();"></div></div>
+<div id="object-filter-base-arrow" class="object-filter-additional-arrow"><div onclick="openFilterBlock()" id="arrow-down-block" ><img class="arrow-down" src="{% static 'img/arrow_down.svg' %}" alt="Еще фильтры" onmouseover="this.src='{% static 'img/arrow_down_hover.svg' %}'; mainfilterBlockHover();" onmouseout="this.src='{% static 'img/arrow_down.svg' %}'; mainfilterBlockOut();"></div></div>
  
-<div id="object-filter-arrow-up" class="object-filter-additional-arrow"><div style="display: none" onclick="closeFilterBlock()" id="arrow-up-block" ><img class="arrow-up" src="img/arrow_up.svg" alt="Свернуть фильтры" onmouseover="this.src='img/arrow_up_hover.svg'; filterBlockHover();" onmouseout="this.src='img/arrow_up.svg'; filterBlockOut();"></div></div>
+<div id="object-filter-arrow-up" class="object-filter-additional-arrow"><div style="display: none" onclick="closeFilterBlock()" id="arrow-up-block" ><img class="arrow-up" src="{% static 'img/arrow_up.svg' %}" alt="Свернуть фильтры" onmouseover="this.src='{% static 'img/arrow_up_hover.svg' %}'; filterBlockHover();" onmouseout="this.src='{ static 'img/arrow_up.svg' %}'; filterBlockOut();"></div></div>
   
       
 <div class="submit-reset-button">
@@ -770,7 +425,7 @@
                <span class="object-span">22.10.21</span>
            </div>
             <div class="object-photo object-style">
-                <img src="img/object-photo-icon.svg" alt="">
+                <img src="{% static 'img/object-photo-icon.svg' %}" alt="">
             </div>
             <div class="metro-item object-style">
                 <div class="metro-block"><div><span class="metro-color arbatsko-pokrovskaya"></span></div>
@@ -806,12 +461,12 @@
                 <span id="yandex-realty-marketing" class="object-marketing-yandex-realty oms"></span>
             </div>
             <div class="objects-work object-style">
-               <div class="object-staff-work"><img src="img/object-discount-price-bad.svg" alt=""></div>
-                <div class="object-staff-work"><img src="img/object-comission-good.svg" alt=""></div>
-                <div class="object-staff-work"><img src="img/object-add-photo-good.svg" alt=""></div>
+               <div class="object-staff-work"><img src="{% static 'img/object-discount-price-bad.svg' %}" alt=""></div>
+                <div class="object-staff-work"><img src="{% static 'img/object-comission-good.svg' %}" alt=""></div>
+                <div class="object-staff-work"><img src="{% static 'img/object-add-photo-good.svg' %}" alt=""></div>
             </div>
             <div class="object-menu object-style">
-               <img src="img/menu-icon.svg" alt="" onmouseover="this.src='img/menu-icon_hover.svg';" onmouseout="this.src='img/menu-icon.svg';">
+               <img src="{% static 'img/menu-icon.svg' %}" alt="" onmouseover="this.src='{% static 'img/menu-icon_hover.svg' %}';" onmouseout="this.src='{% static 'img/menu-icon.svg' %}';">
             </div>
         </div>
    
@@ -1133,40 +788,10 @@
         
     </div>  
 </div>
-        
+{% endblock workspase %}
 
-<div class="before-footer">
-    
-</div>
-   
-   
-<div class="footer">
-        <hr class="footer-line" color="#DBDADA">
-        <p class="footer-text">Центр недвижимости Эльнова. Все права защищены &copy;&nbsp;2020 </p>
-    </div>
-    
-<script src="/static/js/header-scripts.js"></script>
 
-<script>
-    function myFunction() {
-    document.getElementById("dropdown-cabinet").classList.toggle("show");
-};
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-var dropdowns = document.getElementsByClassName("dropdown-cabinet-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-};
-    </script>
-    
+{% block js %}
 <script>
 
 var residentalRealty = document.getElementById("residental-realty-block-add-client");
@@ -1217,152 +842,152 @@ var imgMoveFix = document.getElementById('img-move-fix');
 
     
 function lnovaBasicImgChange() {
-    imgLnovaBasic.src = 'img/avito_pay_click.svg';
-    imgLnovaTop.src = 'img/lnova_marketing_top.svg';
+    imgLnovaBasic.src = '{% static 'img/avito_pay_click.svg' %}';
+    imgLnovaTop.src = '{% static 'img/lnova_marketing_top.svg' %}';
 }
   
 function lnovaTopImgChange() {
-    imgLnovaBasic.src = 'img/lnova_marketing.svg';
-    imgLnovaTop.src = 'img/lnova_marketing_top_click.svg';
+    imgLnovaBasic.src = '{% static 'img/lnova_marketing.svg' %}';
+    imgLnovaTop.src = '{% static 'img/lnova_marketing_top_click.svg' %}';
 }
 
 function avitoPayImgChange() {
-    imgAvitoPay.src = 'img/avito_pay_click.svg';
-    imgAvitoX2.src = 'img/avitoX2.svg';
-    imgAvitoX5.src = 'img/avitoX5.svg';
-    imgAvitoX10.src = 'img/avitoX10.svg';
+    imgAvitoPay.src = '{% static 'img/avito_pay_click.svg' %}';
+    imgAvitoX2.src = '{% static 'img/avitoX2.svg' %}';
+    imgAvitoX5.src = '{% static 'img/avitoX5.svg' %}';
+    imgAvitoX10.src = '{% static 'img/avitoX10.svg' %}';
 }
 
 function avitoX2ImgChange() {
-    imgAvitoPay.src = 'img/avito_pay.svg';
-    imgAvitoX2.src = 'img/avitoX2_click.svg';
-    imgAvitoX5.src = 'img/avitoX5.svg';
-    imgAvitoX10.src = 'img/avitoX10.svg';
+    imgAvitoPay.src = '{% static 'img/avito_pay.svg' %}';
+    imgAvitoX2.src = '{% static 'img/avitoX2_click.svg' %}';
+    imgAvitoX5.src = '{% static 'img/avitoX5.svg' %}';
+    imgAvitoX10.src = '{% static 'img/avitoX10.svg' %}';
 }
 
 function avitoX5ImgChange() {
-    imgAvitoPay.src = 'img/avito_pay.svg';
-    imgAvitoX2.src = 'img/avitoX2.svg';
-    imgAvitoX5.src = 'img/avitoX5_click.svg';
-    imgAvitoX10.src = 'img/avitoX10.svg';
+    imgAvitoPay.src = '{% static 'img/avito_pay.svg' %}';
+    imgAvitoX2.src = '{% static 'img/avitoX2.svg' %}';
+    imgAvitoX5.src = '{% static 'img/avitoX5_click.svg' %}';
+    imgAvitoX10.src = '{% static 'img/avitoX10.svg' %}';
 }
     
 function avitoX10ImgChange() {
-    imgAvitoPay.src = 'img/avito_pay.svg';
-    imgAvitoX2.src = 'img/avitoX2.svg';
-    imgAvitoX5.src = 'img/avitoX5.svg';
-    imgAvitoX10.src = 'img/avitoX10_click.svg';
+    imgAvitoPay.src = '{% static 'img/avito_pay.svg' %}';
+    imgAvitoX2.src = '{% static 'img/avitoX2.svg' %}';
+    imgAvitoX5.src = '{% static 'img/avitoX5.svg' %}';
+    imgAvitoX10.src = '{% static 'img/avitoX10_click.svg' %}';
 }
     
 function changeImgAvitoXl() {
-    if(avitoXlChbx.checked) imgAvitoXl.src = 'img/avito_xl_click.svg';
-    else imgAvitoXl.src = 'img/avito_xl.svg';
+    if(avitoXlChbx.checked) imgAvitoXl.src = '{% static 'img/avito_xl_click.svg' %}';
+    else imgAvitoXl.src = '{% static 'img/avito_xl.svg' %}';
 }
 
 function changeImgAvitoColor() {
-    if(avitoColorChbx.checked) imgAvitoColor.src = 'img/avito_color_click.svg';
-    else imgAvitoColor.src = 'img/avito_color.svg';
+    if(avitoColorChbx.checked) imgAvitoColor.src = '{% static 'img/avito_color_click.svg' %}';
+    else imgAvitoColor.src = '{% static 'img/avito_color.svg' %}';
 }
     
 function changeImgYoulaPay() {
-    imgYoulaPay.src = 'img/avito_pay_click.svg';
-    imgYoulaUp.src = 'img/youla_up.svg';
-    imgYoulaTurbo.src = 'img/youla_turbo.svg';
-    imgYoulaPremium.src = 'img/youla_premium.svg';
-    imgYoulaMaximum.src = 'img/youla_maximum.svg';
+    imgYoulaPay.src = '{% static 'img/avito_pay_click.svg' %}';
+    imgYoulaUp.src = '{% static 'img/youla_up.svg' %}';
+    imgYoulaTurbo.src = '{% static 'img/youla_turbo.svg' %}';
+    imgYoulaPremium.src = '{% static 'img/youla_premium.svg' %}';
+    imgYoulaMaximum.src = '{% static 'img/youla_maximum.svg' %}';
 }
    
 function changeImgYoulaUp() {
-    imgYoulaPay.src = 'img/youla_basic.svg';
-    imgYoulaUp.src = 'img/youla_up_click.svg';
-    imgYoulaTurbo.src = 'img/youla_turbo.svg';
-    imgYoulaPremium.src = 'img/youla_premium.svg';
-    imgYoulaMaximum.src = 'img/youla_maximum.svg';
+    imgYoulaPay.src = '{% static 'img/youla_basic.svg' %}';
+    imgYoulaUp.src = '{% static 'img/youla_up_click.svg' %}';
+    imgYoulaTurbo.src = '{% static 'img/youla_turbo.svg' %}';
+    imgYoulaPremium.src = '{% static 'img/youla_premium.svg' %}';
+    imgYoulaMaximum.src = '{% static 'img/youla_maximum.svg' %}';
 }
     
 function changeImgYoulaTurbo() {
-    imgYoulaPay.src = 'img/youla_basic.svg';
-    imgYoulaUp.src = 'img/youla_up.svg';
-    imgYoulaTurbo.src = 'img/youla_turbo_click.svg';
-    imgYoulaPremium.src = 'img/youla_premium.svg';
-    imgYoulaMaximum.src = 'img/youla_maximum.svg';
+    imgYoulaPay.src = '{% static 'img/youla_basic.svg' %}';
+    imgYoulaUp.src = '{% static 'img/youla_up.svg' %}';
+    imgYoulaTurbo.src = '{% static 'img/youla_turbo_click.svg' %}';
+    imgYoulaPremium.src = '{% static 'img/youla_premium.svg' %}';
+    imgYoulaMaximum.src = '{% static 'img/youla_maximum.svg' %}';
 }
     
 function changeImgYoulaPremium() {
-    imgYoulaPay.src = 'img/youla_basic.svg';
-    imgYoulaUp.src = 'img/youla_up.svg';
-    imgYoulaTurbo.src = 'img/youla_turbo.svg';
-    imgYoulaPremium.src = 'img/youla_premium_click.svg';
-    imgYoulaMaximum.src = 'img/youla_maximum.svg';
+    imgYoulaPay.src = '{% static 'img/youla_basic.svg' %}';
+    imgYoulaUp.src = '{% static 'img/youla_up.svg' %}';
+    imgYoulaTurbo.src = '{% static 'img/youla_turbo.svg' %}';
+    imgYoulaPremium.src = '{% static 'img/youla_premium_click.svg' %}';
+    imgYoulaMaximum.src = '{% static 'img/youla_maximum.svg' %}';
 }
     
 function changeImgYoulaMaximum() {
-    imgYoulaPay.src = 'img/youla_basic.svg';
-    imgYoulaUp.src = 'img/youla_up.svg';
-    imgYoulaTurbo.src = 'img/youla_turbo.svg';
-    imgYoulaPremium.src = 'img/youla_premium.svg';
-    imgYoulaMaximum.src = 'img/youla_maximum_click.svg';
+    imgYoulaPay.src = '{% static 'img/youla_basic.svg' %}';
+    imgYoulaUp.src = '{% static 'img/youla_up.svg' %}';
+    imgYoulaTurbo.src = '{% static 'img/youla_turbo.svg' %}';
+    imgYoulaPremium.src = '{% static 'img/youla_premium.svg' %}';
+    imgYoulaMaximum.src = '{% static 'img/youla_maximum_click.svg' %}';
 }
     
 function changeImgDomclickPay() {
-    imgDomclickPay.src = 'img/avito_pay_click.svg';
-    imgDomclickExpress.src = 'img/domclick_express.svg';
-    imgDomclickPremium.src = 'img/domclick_premium.svg';
-    imgDomclickTop.src = 'img/domclick_top.svg';
+    imgDomclickPay.src = '{% static 'img/avito_pay_click.svg' %}';
+    imgDomclickExpress.src = '{% static 'img/domclick_express.svg' %}';
+    imgDomclickPremium.src = '{% static 'img/domclick_premium.svg' %}';
+    imgDomclickTop.src = '{% static 'img/domclick_top.svg' %}';
 }
     
 function changeImgDomclickExpress() {
-    imgDomclickPay.src = 'img/domclick_basic.svg';
-    imgDomclickExpress.src = 'img/domclick_express_click.svg';
-    imgDomclickPremium.src = 'img/domclick_premium.svg';
-    imgDomclickTop.src = 'img/domclick_top.svg';
+    imgDomclickPay.src = '{% static 'img/domclick_basic.svg' %}';
+    imgDomclickExpress.src = '{% static 'img/domclick_express_click.svg' %}';
+    imgDomclickPremium.src = '{% static 'img/domclick_premium.svg' %}';
+    imgDomclickTop.src = '{% static 'img/domclick_top.svg' %}';
 }
 
 function changeImgDomclickPremium() {
-    imgDomclickPay.src = 'img/domclick_basic.svg';
-    imgDomclickExpress.src = 'img/domclick_express.svg';
-    imgDomclickPremium.src = 'img/domclick_premium_click.svg';
-    imgDomclickTop.src = 'img/domclick_top.svg';
+    imgDomclickPay.src = '{% static 'img/domclick_basic.svg' %}';
+    imgDomclickExpress.src = '{% static 'img/domclick_express.svg' %}';
+    imgDomclickPremium.src = '{% static 'img/domclick_premium_click.svg' %}';
+    imgDomclickTop.src = '{% static 'img/domclick_top.svg' %}';
 }
     
 function changeImgDomclickTop() {
-    imgDomclickPay.src = 'img/domclick_basic.svg';
-    imgDomclickExpress.src = 'img/domclick_express.svg';
-    imgDomclickPremium.src = 'img/domclick_premium.svg';
-    imgDomclickTop.src = 'img/domclick_top_click.svg';
+    imgDomclickPay.src = '{% static 'img/domclick_basic.svg' %}';
+    imgDomclickExpress.src = '{% static 'img/domclick_express.svg' %}';
+    imgDomclickPremium.src = '{% static 'img/domclick_premium.svg' %}';
+    imgDomclickTop.src = '{% static 'img/domclick_top_click.svg' %}';
 }
     
 function changeImgMovePay() {
-    imgMovePay.src = 'img/avito_pay_click.svg';
-    imgMoveUp.src = 'img/move_up.svg'; 
-    imgMovePremium.src = 'img/move_premium.svg'; 
-    imgMoveFix.src = 'img/move_fix.svg';  
+    imgMovePay.src = '{% static 'img/avito_pay_click.svg' %}';
+    imgMoveUp.src = '{% static 'img/move_up.svg' %}';
+    imgMovePremium.src = '{% static 'img/move_premium.svg' %}';
+    imgMoveFix.src = '{% static 'img/move_fix.svg' %}';
 }
 
 function changeImgMoveUp() {
-    imgMovePay.src = 'img/move_pay.svg';
-    imgMoveUp.src = 'img/move_up_click.svg'; 
-    imgMovePremium.src = 'img/move_premium.svg'; 
-    imgMoveFix.src = 'img/move_fix.svg';  
+    imgMovePay.src = '{% static 'img/move_pay.svg' %}';
+    imgMoveUp.src = '{% static 'img/move_up_click.svg' %}';
+    imgMovePremium.src = '{% static 'img/move_premium.svg' %}';
+    imgMoveFix.src = '{% static 'img/move_fix.svg' %}';
 }
     
 function changeImgMovePremium() {
-    imgMovePay.src = 'img/move_pay.svg';
-    imgMoveUp.src = 'img/move_up.svg'; 
-    imgMovePremium.src = 'img/move_premium_click.svg'; 
-    imgMoveFix.src = 'img/move_fix.svg';  
+    imgMovePay.src = '{% static 'img/move_pay.svg' %}';
+    imgMoveUp.src = '{% static 'img/move_up.svg' %}';
+    imgMovePremium.src = '{% static 'img/move_premium_click.svg' %}';
+    imgMoveFix.src = '{% static 'img/move_fix.svg' %}';
 }
 
 function changeImgMoveFix() {
-    imgMovePay.src = 'img/move_pay.svg';
-    imgMoveUp.src = 'img/move_up.svg'; 
-    imgMovePremium.src = 'img/move_premium.svg'; 
-    imgMoveFix.src = 'img/move_fix_click.svg';  
+    imgMovePay.src = '{% static 'img/move_pay.svg' %}';
+    imgMoveUp.src = '{% static 'img/move_up.svg' %}';
+    imgMovePremium.src = '{% static 'img/move_premium.svg' %}';
+    imgMoveFix.src = '{% static 'img/move_fix_click.svg' %}';
 }
     
 function changeImgAvitoDomofond() {
-    if(avitoDomofondChbx.checked) imgAvitoDomofond.src = 'img/avito_domofond_premium_click.svg';
-    else imgAvitoDomofond.src = 'img/avito_domofond_premium.svg';
+    if(avitoDomofondChbx.checked) imgAvitoDomofond.src = '{% static 'img/avito_domofond_premium_click.svg' %}';
+    else imgAvitoDomofond.src = '{% static 'img/avito_domofond_premium.svg' %}';
 }
     
 function openComercialBlock() {
@@ -1425,99 +1050,97 @@ function filterBlockOut() {
     }
     
 function changeImgCianPay() {
-    imgCianPay.src = 'img/avito_pay_click.svg';
-    imgCianPremium.src = 'img/cian_premium.svg';
-    imgCianTop.src = 'img/cian_top.svg';  
+    imgCianPay.src = '{% static 'img/avito_pay_click.svg' %}';
+    imgCianPremium.src = '{% static 'img/cian_premium.svg' %}';
+    imgCianTop.src = '{% static 'img/cian_top.svg' %}';
 }
      
 function changeImgCianPremium() {
-    imgCianPay.src = 'img/cian_pay.svg';
-    imgCianPremium.src = 'img/cian_premium_click.svg';
-    imgCianTop.src = 'img/cian_top.svg';
+    imgCianPay.src = '{% static 'img/cian_pay.svg' %}';
+    imgCianPremium.src = '{% static 'img/cian_premium_click.svg' %}';
+    imgCianTop.src = '{% static 'img/cian_top.svg' %}';
 }
     
 function changeImgCianTop() {
-    imgCianPay.src = 'img/cian_pay.svg';
-    imgCianPremium.src = 'img/cian_premium.svg';
-    imgCianTop.src = 'img/cian_top_click.svg';
+    imgCianPay.src = '{% static 'img/cian_pay.svg' %}';
+    imgCianPremium.src = '{% static 'img/cian_premium.svg' %}';
+    imgCianTop.src = '{% static 'img/cian_top_click.svg' %}';
 }
    
 function changeImgCianAuction() {
-    if(cianAuctionChbx.checked) imgCianAuction.src = 'img/cian_auction_click.svg';
-    else imgCianAuction.src = 'img/cian_auction.svg';
+    if(cianAuctionChbx.checked) imgCianAuction.src = '{% static 'img/cian_auction_click.svg' %}';
+    else imgCianAuction.src = '{% static 'img/cian_auction.svg' %}';
 }
     
 function changeImgCianColor() {
-    if(cianColorChbx.checked) imgCianColor.src = 'img/cian_color_click.svg';
-    else imgCianColor.src = 'img/cian_color.svg';
+    if(cianColorChbx.checked) imgCianColor.src = '{% static 'img/cian_color_click.svg' %}';
+    else imgCianColor.src = '{% static 'img/cian_color.svg' %}';
 }
    
     
 function changeImgYandexPay() {
-    imgYandexPay.src = 'img/avito_pay_click.svg'
-    imgYandexUp.src = 'img/yandex_up.svg'
-    imgYandexPremium.src = 'img/yandex_premium.svg'
-    imgYandexTop.src = 'img/yandex_top.svg'
+    imgYandexPay.src = '{% static 'img/avito_pay_click.svg' %}'
+    imgYandexUp.src = '{% static 'img/yandex_up.svg' %}'
+    imgYandexPremium.src = '{% static 'img/yandex_premium.svg' %}'
+    imgYandexTop.src = '{% static 'img/yandex_top.svg' %}'
 }
     
 function changeImgYandexUp() {
-    imgYandexPay.src = 'img/yandex_pay.svg'
-    imgYandexUp.src = 'img/yandex_up_click.svg'
-    imgYandexPremium.src = 'img/yandex_premium.svg'
-    imgYandexTop.src = 'img/yandex_top.svg'
+    imgYandexPay.src = '{% static 'img/yandex_pay.svg' %}'
+    imgYandexUp.src = '{% static 'img/yandex_up_click.svg' %}'
+    imgYandexPremium.src = '{% static 'img/yandex_premium.svg' %}'
+    imgYandexTop.src = '{% static 'img/yandex_top.svg' %}'
 
 }
     
 function changeImgYandexPremium() {
-    imgYandexPay.src = 'img/yandex_pay.svg'
-    imgYandexUp.src = 'img/yandex_up.svg'
-    imgYandexPremium.src = 'img/yandex_premium_click.svg'
-    imgYandexTop.src = 'img/yandex_top.svg'
+    imgYandexPay.src = '{% static 'img/yandex_pay.svg' %}'
+    imgYandexUp.src = '{% static 'img/yandex_up.svg' %}'
+    imgYandexPremium.src = '{% static 'img/yandex_premium_click.svg' %}'
+    imgYandexTop.src = '{% static 'img/yandex_top.svg' %}'
 }
     
 function changeImgYandexTop() {
-    imgYandexPay.src = 'img/yandex_pay.svg'
-    imgYandexUp.src = 'img/yandex_up.svg'
-    imgYandexPremium.src = 'img/yandex_premium.svg'
-    imgYandexTop.src = 'img/yandex_top_click.svg'
+    imgYandexPay.src = '{% static 'img/yandex_pay.svg' %}'
+    imgYandexUp.src = '{% static 'img/yandex_up.svg' %}'
+    imgYandexPremium.src = '{% static 'img/yandex_premium.svg' %}'
+    imgYandexTop.src = '{% static 'img/yandex_top_click.svg' %}'
 }
     
     
 function defaultIcons() {
-    imgLnovaBasic.src = 'img/lnova_marketing.svg';
-    imgLnovaTop.src = 'img/lnova_marketing_top.svg';
-    imgAvitoPay.src = 'img/avito_pay.svg';
-    imgAvitoX2.src = 'img/avitoX2.svg';
-    imgAvitoX5.src = 'img/avitoX5.svg';
-    imgAvitoX10.src = 'img/avitoX10.svg';
-    imgCianPay.src = 'img/cian_pay.svg';
-    imgCianPremium.src = 'img/cian_premium.svg';
-    imgCianTop.src = 'img/cian_top.svg';
-    imgCianAuction.src = 'img/cian_auction.svg';
-    imgYandexPay.src = 'img/yandex_pay.svg';
-    imgYandexUp.src = 'img/yandex_up.svg';
-    imgYandexPremium.src = 'img/yandex_premium.svg';
-    imgYandexTop.src = 'img/yandex_top.svg';
-    imgAvitoXl.src = 'img/avito_xl.svg';
-    imgAvitoColor.src = 'img/avito_color.svg';
-    imgAvitoDomofond.src = 'img/avito_domofond_premium.svg';
-    imgCianAuction.src = 'img/cian_auction.svg';
-    imgCianColor.src = 'img/cian_color.svg';
-    imgYoulaPay.src = 'img/youla_basic.svg';
-    imgYoulaUp.src = 'img/youla_up.svg';
-    imgYoulaTurbo.src = 'img/youla_turbo.svg';
-    imgYoulaPremium.src = 'img/youla_premium.svg';
-    imgYoulaMaximum.src = 'img/youla_maximum.svg';
-    imgDomclickPay.src = 'img/domclick_basic.svg';
-    imgDomclickExpress.src = 'img/domclick_express.svg';
-    imgDomclickPremium.src = 'img/domclick_premium.svg';
-    imgDomclickTop.src = 'img/domclick_top.svg';
-    imgMovePay.src = 'img/move_pay.svg';
-    imgMoveUp.src = 'img/move_up.svg'; 
-    imgMovePremium.src = 'img/move_premium.svg'; 
-    imgMoveFix.src = 'img/move_fix.svg';
+    imgLnovaBasic.src = '{% static 'img/lnova_marketing.svg' %}';
+    imgLnovaTop.src = '{% static 'img/lnova_marketing_top.svg' %}';
+    imgAvitoPay.src = '{% static 'img/avito_pay.svg' %}';
+    imgAvitoX2.src = '{% static 'img/avitoX2.svg' %}';
+    imgAvitoX5.src = '{% static 'img/avitoX5.svg' %}';
+    imgAvitoX10.src = '{% static 'img/avitoX10.svg' %}';
+    imgCianPay.src = '{% static 'img/cian_pay.svg' %}';
+    imgCianPremium.src = '{% static 'img/cian_premium.svg' %}';
+    imgCianTop.src = '{% static 'img/cian_top.svg' %}';
+    imgCianAuction.src = '{% static 'img/cian_auction.svg' %}';
+    imgYandexPay.src = '{% static 'img/yandex_pay.svg' %}';
+    imgYandexUp.src = '{% static 'img/yandex_up.svg' %}';
+    imgYandexPremium.src = '{% static 'img/yandex_premium.svg' %}';
+    imgYandexTop.src = '{% static 'img/yandex_top.svg' %}';
+    imgAvitoXl.src = '{% static 'img/avito_xl.svg' %}';
+    imgAvitoColor.src = '{% static 'img/avito_color.svg' %}';
+    imgAvitoDomofond.src = '{% static 'img/avito_domofond_premium.svg' %}';
+    imgCianAuction.src = '{% static 'img/cian_auction.svg' %}';
+    imgCianColor.src = '{% static 'img/cian_color.svg' %}';
+    imgYoulaPay.src = '{% static 'img/youla_basic.svg' %}';
+    imgYoulaUp.src = '{% static 'img/youla_up.svg' %}';
+    imgYoulaTurbo.src = '{% static 'img/youla_turbo.svg' %}';
+    imgYoulaPremium.src = '{% static 'img/youla_premium.svg' %}';
+    imgYoulaMaximum.src = '{% static 'img/youla_maximum.svg' %}';
+    imgDomclickPay.src = '{% static 'img/domclick_basic.svg' %}';
+    imgDomclickExpress.src = '{% static 'img/domclick_express.svg' %}';
+    imgDomclickPremium.src = '{% static 'img/domclick_premium.svg' %}';
+    imgDomclickTop.src = '{% static 'img/domclick_top.svg' %}';
+    imgMovePay.src = '{% static 'img/move_pay.svg' %}';
+    imgMoveUp.src = '{% static 'img/move_up.svg' %}';
+    imgMovePremium.src = '{% static 'img/move_premium.svg' %}';
+    imgMoveFix.src = '{% static 'img/move_fix.svg' %}';
 }
-    
 </script>
-</body>
-</html>
+{% endblock js %}
